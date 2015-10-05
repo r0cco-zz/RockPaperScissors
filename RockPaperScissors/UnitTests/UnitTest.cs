@@ -17,6 +17,8 @@ namespace UnitTests
     public class UnitTest
     {
         [TestCase(Choice.Paper, Result.Tie)]
+        [TestCase(Choice.Rock, Result.Win)]
+        [TestCase(Choice.Scissors, Result.Loss)]
         public void WinTest(Choice choice, Result expectedResult)
         {
             //Arrange
