@@ -12,8 +12,8 @@ namespace RockPaperScissors
     {
         public void PlayRound()
         {
-            Player p1 = new ComputerPlayer("Player1");
-            Player p2 = new ComputerPlayer("Player2");
+            Player p1 = new WeightedComputerPlayer("Player1");
+            Player p2 = new WeightedComputerPlayer("Player2");
 
             MatchResult result = new MatchResult();
             result.Player1_Choice = p1.GetChoice();

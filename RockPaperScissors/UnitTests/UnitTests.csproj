@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CA5F367A-B643-45F5-AD03-76293CFE531F}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{DE713517-BEF4-4CF7-B0A4-FD801C7BC686}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RockPaperScissors</RootNamespace>
-    <AssemblyName>RockPaperScissors</AssemblyName>
+    <RootNamespace>UnitTests</RootNamespace>
+    <AssemblyName>UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -47,23 +44,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums\Choice.cs" />
-    <Compile Include="Enums\Result.cs" />
-    <Compile Include="Game.cs" />
-    <Compile Include="Implementations\ComputerPlayer.cs" />
-    <Compile Include="Implementations\HumanPlayer.cs" />
-    <Compile Include="Implementations\Player.cs" />
-    <Compile Include="Implementations\WeightedComputerPlayer.cs" />
-    <Compile Include="Interfaces\IChoiceSelector.cs" />
-    <Compile Include="MatchResult.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="TestPlayers\PaperPlayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestPlayers\RockPlayer.cs" />
+    <Compile Include="TestPlayers\ScissorPlayer.cs" />
+    <Compile Include="UnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\RockPaperScissorsMethodTests\RockPaperScissorsMethodTests.csproj">
+      <Project>{9592cc23-5b3a-4cfb-9e91-ca06ec41db1d}</Project>
+      <Name>RockPaperScissorsMethodTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RockPaperScissors\RockPaperScissors.csproj">
+      <Project>{ca5f367a-b643-45f5-ad03-76293cfe531f}</Project>
+      <Name>RockPaperScissors</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

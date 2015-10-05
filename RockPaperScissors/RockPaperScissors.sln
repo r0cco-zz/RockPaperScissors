@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissors", "RockPaperScissors\RockPaperScissors.csproj", "{CA5F367A-B643-45F5-AD03-76293CFE531F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{DE713517-BEF4-4CF7-B0A4-FD801C7BC686}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissorsMethodTests", "RockPaperScissorsMethodTests\RockPaperScissorsMethodTests.csproj", "{9592CC23-5B3A-4CFB-9E91-CA06EC41DB1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{CA5F367A-B643-45F5-AD03-76293CFE531F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA5F367A-B643-45F5-AD03-76293CFE531F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA5F367A-B643-45F5-AD03-76293CFE531F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE713517-BEF4-4CF7-B0A4-FD801C7BC686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE713517-BEF4-4CF7-B0A4-FD801C7BC686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE713517-BEF4-4CF7-B0A4-FD801C7BC686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE713517-BEF4-4CF7-B0A4-FD801C7BC686}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9592CC23-5B3A-4CFB-9E91-CA06EC41DB1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9592CC23-5B3A-4CFB-9E91-CA06EC41DB1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9592CC23-5B3A-4CFB-9E91-CA06EC41DB1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9592CC23-5B3A-4CFB-9E91-CA06EC41DB1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
