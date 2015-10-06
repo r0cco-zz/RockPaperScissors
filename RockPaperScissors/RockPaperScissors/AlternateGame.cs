@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +8,7 @@ using RockPaperScissors.Implementations;
 
 namespace RockPaperScissors
 {
-    public class Game
+    public class AlternateGame
     {
         public void PlayRound()
         {
@@ -20,26 +19,26 @@ namespace RockPaperScissors
             do
             {
                 MatchResult result = new MatchResult();
-            result.Player1_Choice = p1.GetChoice();
-            result.Player2_Choice = p2.GetChoice();     
-  
-                if (result.Player1_Choice == result.Player2_Choice)
-            {
-                result.Match_Result = Result.Tie;
-            }
-            else if ((result.Player1_Choice == Choice.Rock && (result.Player2_Choice == Choice.Scissors))  ||
-                     (result.Player1_Choice == Choice.Paper && (result.Player2_Choice == Choice.Rock))  ||
-                     (result.Player1_Choice == Choice.Scissors && (result.Player2_Choice == Choice.Paper))  ||
-                     (result.Player1_Choice == Choice.Spock && (result.Player2_Choice == Choice.Rock)))
-            {
-                result.Match_Result = Result.Win;
-            }
-            else
-            {
-                result.Match_Result = Result.Loss;
-            }
+                result.Player1_Choice = p1.GetChoice();
+                result.Player2_Choice = p2.GetChoice();
 
-            ProcessResult(p1, p2, result);                
+                if (result.Player1_Choice == result.Player2_Choice)
+                {
+                    result.Match_Result = Result.Tie;
+                }
+                else if ((result.Player1_Choice == Choice.Rock && (result.Player2_Choice == Choice.Scissors) || (result.Player2_Choice == Choice.Lizard)) ||
+                         (result.Player1_Choice == Choice.Paper && (result.Player2_Choice == Choice.Rock) || (result.Player2_Choice == Choice.Spock)) ||
+                         (result.Player1_Choice == Choice.Scissors && (result.Player2_Choice == Choice.Paper) || (result.Player2_Choice == Choice.Lizard)) ||
+                         (result.Player1_Choice == Choice.Spock && (result.Player2_Choice == Choice.Rock) || (result.Player2_Choice == Choice.Scissors)))
+                {
+                    result.Match_Result = Result.Win;
+                }
+                else
+                {
+                    result.Match_Result = Result.Loss;
+                }
+
+                ProcessResult(p1, p2, result);
 
                 Console.Write("\nWould you like to play again? (Enter \"Q\" to quit) : ");
                 input = Console.ReadLine();
@@ -55,28 +54,28 @@ namespace RockPaperScissors
         public void ProcessResult(Player Player1, Player Player2, MatchResult Result)
         {
             Console.WriteLine("\n{0} picked {1}, {2} picked {3}", Player1.Name,
-                Enum.GetName(typeof (Choice), Result.Player1_Choice), Player2.Name,
-                Enum.GetName(typeof (Choice), Result.Player2_Choice));
-           
+                Enum.GetName(typeof(Choice), Result.Player1_Choice), Player2.Name,
+                Enum.GetName(typeof(Choice), Result.Player2_Choice));
+
 
 
             switch (Result.Match_Result)
             {
                 case Enums.Result.Win:
                     Console.WriteLine("\n{0} wins!!", Player1.Name);
-                    player1Wins ++;
-                    player2Losses ++;
+                    player1Wins++;
+                    player2Losses++;
                     break;
 
                 case Enums.Result.Loss:
                     Console.WriteLine("\n{0} wins!!", Player2.Name);
-                    player2Wins ++;
-                    player1Losses ++;
+                    player2Wins++;
+                    player1Losses++;
                     break;
 
                 default:
                     Console.WriteLine("\nYou both tie!!");
-                    playerTies ++;
+                    playerTies++;
                     break;
             }
 
@@ -85,9 +84,5 @@ namespace RockPaperScissors
             Console.WriteLine("Ties: {0}", playerTies);
         }
 
-       
-       
-
-        
     }
 }

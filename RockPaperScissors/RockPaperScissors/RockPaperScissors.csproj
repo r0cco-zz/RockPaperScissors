@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlternateGame.cs" />
     <Compile Include="Enums\Choice.cs" />
     <Compile Include="Enums\Result.cs" />
     <Compile Include="Game.cs" />

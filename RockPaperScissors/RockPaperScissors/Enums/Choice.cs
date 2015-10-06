@@ -11,6 +11,9 @@ namespace RockPaperScissors.Enums
         Unknown,
         Rock,
         Paper,
-        Scissors
+        Scissors,
+        Spock,
+        Lizard
+
     }
 }
