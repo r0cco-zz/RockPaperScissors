@@ -51,14 +51,21 @@
     <Compile Include="Enums\Choice.cs" />
     <Compile Include="Enums\Result.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="IGameRepository.cs" />
     <Compile Include="Implementations\ComputerPlayer.cs" />
+    <Compile Include="Implementations\ComputerPlayerSpock.cs" />
     <Compile Include="Implementations\HumanPlayer.cs" />
+    <Compile Include="Implementations\HumanPlayerSpock.cs" />
     <Compile Include="Implementations\Player.cs" />
     <Compile Include="Implementations\WeightedComputerPlayer.cs" />
+    <Compile Include="Implementations\WeightedComputerPlayerSpock.cs" />
+    <Compile Include="Interfaces\IGameInterface.cs" />
     <Compile Include="Interfaces\IChoiceSelector.cs" />
     <Compile Include="MatchResult.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IGameFactory.cs" />
+    <Compile Include="Repository\PlayerRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

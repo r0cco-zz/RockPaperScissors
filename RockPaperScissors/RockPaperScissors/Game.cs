@@ -6,15 +6,16 @@ using System.Text;
 using System.Threading.Tasks;
 using RockPaperScissors.Enums;
 using RockPaperScissors.Implementations;
+using RockPaperScissors.Interfaces;
 
 namespace RockPaperScissors
 {
-    public class Game
+    public class Game : IGameInterface
     {
-        public void PlayRound()
+        public void PlayRound(Player player2)
         {
             Player p1 = new HumanPlayer("Player1");
-            Player p2 = new HumanPlayer("Player2");
+            Player p2 = player2;
             string input = "";
 
             do
