@@ -19,7 +19,7 @@ namespace RockPaperScissors.Implementations
 
             while (choice == Choice.Unknown)
             {
-                Console.Write("{0}, enter a choice: (R)ock, (P)aper, (S)cissors, (Sp)ock, (L)izard : ", Name);
+                Console.Write("{0}, enter a choice: (R)ock, (P)aper, (S)cissors, (SP)ock, (L)izard : ", Name);
                 string input = Console.ReadLine();
 
                 switch (input.ToUpper())

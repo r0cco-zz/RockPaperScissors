@@ -12,9 +12,6 @@ namespace RockPaperScissors.Repository
 {
     public class IGameFactory
     {
-
-
-
         public static IGameInterface CreateGame(string gameType)
         {
             bool validInput = false;
@@ -42,10 +39,60 @@ namespace RockPaperScissors.Repository
             }
             return result;
         }
+    }
 
+    public class PlayerFactory
+    {
+        public static Player CreatePlayer(string gameType, string playerType)
+        {
+            Player player;
+            if (gameType == "n")
+            {
+                player = CreateSpockPlayer(playerType);
+            }
+            else
+            {
+                player = CreateRegularPlayer(playerType);
+            }
 
+            return player;
+        }
 
-        public static Player CreatePlayer(string playerType)
+        private static Player CreateSpockPlayer(string playerType)
+        {
+            bool validInput2 = false;
+            Player result = new HumanPlayerSpock("Player2");
+            while (!validInput2)
+            {
+                switch (playerType.ToUpper())
+                {
+                    case "H":
+                        result = new HumanPlayerSpock("Player2");
+                        validInput2 = true;
+                        break;
+
+                    case "C":
+                        result = new ComputerPlayerSpock("Player2");
+                        validInput2 = true;
+                        break;
+
+                    case "W":
+                        result = new WeightedComputerPlayerSpock("Player2");
+                        validInput2 = true;
+                        break;
+
+                    default:
+                        validInput2 = false;
+                        Console.WriteLine(
+                            "Invalid entry, would you like to play against a (h)uman player, (c)omputer player, or (w)eighted computer player?");
+                        playerType = Console.ReadLine();
+                        break;
+                }
+            }
+            return result;
+        }
+
+        private static Player CreateRegularPlayer(string playerType)
         {
             bool validInput2 = false;
             Player result = new HumanPlayer("Player2");

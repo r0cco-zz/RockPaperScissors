@@ -23,22 +23,9 @@ namespace RockPaperScissors
             string playerType = Console.ReadLine();
 
 
-
-            //AlternateGame alternateGame = new AlternateGame(); 
-            //Game newGame = new Game();
-
-            //if (gameType == "T")
-            //{
-            //    newGame.PlayRound();
-            //}
-
-            //else
-            //{
-            //    alternateGame.PlayRound();
-            //}
-
             var thisGame = IGameFactory.CreateGame(gameType);
-            var thisPlayer = IGameFactory.CreatePlayer(playerType);
+
+            var thisPlayer = PlayerFactory.CreatePlayer(gameType, playerType);
 
             thisGame.PlayRound(thisPlayer);
         }
