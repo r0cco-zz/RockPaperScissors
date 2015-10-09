@@ -46,7 +46,7 @@ namespace RockPaperScissors.Repository
         public static Player CreatePlayer(string gameType, string playerType)
         {
             Player player;
-            if (gameType == "n")
+            if (gameType.ToUpper() == "n")
             {
                 player = CreateSpockPlayer(playerType);
             }
